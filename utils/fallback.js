@@ -9,8 +9,9 @@ export async function getResponse(
     if (currentModel === "groq") {
       return await aiGroq(prompt);
     }
-
+    else{
     return await aiGemini(prompt);
+    }
   } catch (error) {
     console.log("\nPrimary Model Failed To Run.");
 
@@ -18,8 +19,9 @@ export async function getResponse(
       console.log("Switching to Gemini...\n");
       return await aiGemini(prompt);
     }
-
+    else{
     console.log("Switching to Groq...\n");
     return await aiGroq(prompt);
+    }
   }
 }
