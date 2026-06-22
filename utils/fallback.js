@@ -1,5 +1,5 @@
-import { askGroq } from "../services/groq.js";
-import { askGemini } from "../services/gemini.js";
+import { aiGroq } from "../services/groq.js";
+import { aiGemini } from "../services/gemini.js";
 
 export async function getResponse(
   prompt,
@@ -7,19 +7,19 @@ export async function getResponse(
 ) {
   try {
     if (currentModel === "groq") {
-      return await askGroq(prompt);
+      return await aiGroq(prompt);
     }
 
-    return await askGemini(prompt);
+    return await aiGemini(prompt);
   } catch (error) {
     console.log("\nPrimary Model Failed.");
 
     if (currentModel === "groq") {
       console.log("Switching to Gemini...\n");
-      return await askGemini(prompt);
+      return await aiGemini(prompt);
     }
 
     console.log("Switching to Groq...\n");
-    return await askGroq(prompt);
+    return await aiGroq(prompt);
   }
 }
