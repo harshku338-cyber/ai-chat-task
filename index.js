@@ -18,7 +18,7 @@ while (true) {
   );
 
   if (!input.trim()) {
-    console.log("Please enter a message.");
+    console.log("Please enter something.");
     continue;
   }
 
@@ -29,13 +29,13 @@ while (true) {
 
   if (input === "/groq") {
     currentModel = "groq";
-    console.log("Using Groq Model");
+    console.log("Using Groq AI Model");
     continue;
   }
 
   if (input === "/gemini") {
     currentModel = "gemini";
-    console.log("Using Gemini Model");
+    console.log("Using Gemini AI Model");
     continue;
   }
 

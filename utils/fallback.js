@@ -12,7 +12,7 @@ export async function getResponse(
 
     return await aiGemini(prompt);
   } catch (error) {
-    console.log("\nPrimary Model Failed.");
+    console.log("\nPrimary Model Failed To Run.");
 
     if (currentModel === "groq") {
       console.log("Switching to Gemini...\n");
